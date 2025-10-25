@@ -47,7 +47,11 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
+    "@langchain/core": "^1.0.1",
+    "@langchain/openai": "^1.0.0",
     "@openai/agents": "^0.2.0",
+    "langchain": "^1.0.1",
+    "pdf-parse": "^2.4.5",
     "zod": "^3.25.76"
   }
 }
