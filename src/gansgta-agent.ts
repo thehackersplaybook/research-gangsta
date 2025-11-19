@@ -11,7 +11,6 @@ import { Agent, run } from '@openai/agents';
 import { z } from 'zod';
 import { readFile } from 'fs/promises';
 import { PDFParse } from 'pdf-parse';
-import { OpenAIEmbeddings } from '@langchain/openai';
 
 export const GangstaAgentSupportedModels = [
   'gpt-4.1',
@@ -47,7 +46,6 @@ export class GangstaAgentInitializationOptionsError extends Error {
 
 export class GangstaAgent {
   private options: GangstaAgentInitializationOptions;
-  private embeddings: OpenAIEmbeddings;
 
   /**
    * Constructs an instance of the GangstaAgent.
@@ -61,9 +59,6 @@ export class GangstaAgent {
     }
 
     this.options = options;
-    this.embeddings = new OpenAIEmbeddings({
-      model: DEFAULT_EMBEDDING_MODEL,
-    });
   }
 
   private validateModel(model: string): {
@@ -138,6 +133,8 @@ export class GangstaAgent {
    * @returns The content of the file.
    * @throws Error if the file type is not supported.
    */
+  // @ts-ignore - TODO: This method will be used in future implementation
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   private async loadFile(filePath: string): Promise<string> {
     const file = await readFile(filePath);
 
@@ -152,10 +149,14 @@ export class GangstaAgent {
     }
   }
 
+  // @ts-ignore - TODO: This method will be used in future implementation
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   private async getVectorStore(paperText: string): Promise<any> {
     // TODO: Implement vector store
   }
 
+  // @ts-ignore - TODO: This method will be used in future implementation
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   private async generateResponse(prompt: string, paperFilePath: string): Promise<string> {
     const agentNumber = Math.floor(Math.random() * 1000000);
 

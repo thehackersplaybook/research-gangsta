@@ -1,12 +1,10 @@
 #!/usr/bin/env node
 
-import { greet } from './index.js';
-
 /**
  * Display usage information
  */
 function showUsage() {
-  console.log(greet('Research Gangsta'));
+  console.log('Hello, Research Gangsta!');
   console.log('\nUsage:');
   console.log('  npx research-gangsta --ingest <file.pdf>  Ingest a research paper');
   console.log('  npx research-gangsta --gchat              Chat with "The G"');
@@ -19,7 +17,7 @@ function showUsage() {
  * Handle paper ingestion
  */
 function handleIngest(filePath: string) {
-  console.log(greet('Research Gangsta'));
+  console.log('Hello, Research Gangsta!');
   console.log(`\nIngesting paper: ${filePath}`);
   console.log('\nPaper ingestion functionality coming soon!');
   console.log('This will analyze and extract key information from your research paper.');
@@ -29,7 +27,7 @@ function handleIngest(filePath: string) {
  * Handle G-Chat
  */
 function handleGChat() {
-  console.log(greet('The G'));
+  console.log('Hello, The G!');
   console.log('\nWelcome to G-Chat! Chat with "The G" to upgrade your knowledge.');
   console.log('\nG-Chat functionality coming soon!');
   console.log('This will provide an interactive chat interface to discuss ingested papers.');
